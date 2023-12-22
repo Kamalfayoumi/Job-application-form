@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<title>Application form</title>
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<style>
+
+
+body {
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            margin: 0%;
+            padding: 0%;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #333; 
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #e9ecef;
+            color: #111;
+        }
+
+        .navbar a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        h1, h2 {
+            color: #343a40;
+            transition: color 0.3s ease;
+        }
+
+        form {
+            background-color: #ffffff; 
+            padding: 50px;
+            border-radius: 10px;
+            width: 70%;
+            margin-top: 50px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: color 0.3s ease;
+        }
+
+
+
+        button {
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease ;
+        }
+
+        button[type="reset"] {
+            background-color: #e74c3c;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+            transform: scale(1.05);
+        }
+
+
+        label, input, textarea, select {
+    color: #090909; 
+}
+
+
+input, textarea, select {
+    border: 1px solid #090909;  
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+}
+
+input:hover, textarea:hover, select:hover {
+    border-color: #080808;  
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
+
+        textarea, 
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+input[type="file"], 
+input[type="radio"], 
+input[type="checkbox"] {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: none;
+    transition: box-shadow 0.3s ease;
+}
+
+textarea:hover, 
+input:hover {
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+}
+
+input[type="radio"]:checked, 
+input[type="checkbox"]:checked {
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5) inset;
+}
+
+
+
+label[for="male"], label[for="female"] {
+    margin-right: 10px;
+    color: #333; 
+    font-weight: bold;
+}
+
+
+input[type="radio"] {
+    transform: scale(1.2); 
+    margin-right: 5px;
+}
+
+
+input[type="radio"] + label[for="male"],
+input[type="radio"] + label[for="female"] {
+    margin-right: 20px; 
+}
+
+    
+
+</style>
+
+<script>
+
+$(document).ready(function () {
+            $("#birthdate, #textbox11").datepicker({
+                
+            });
+        });
+
+        function handleSubmit() {
+    var firstName = $("#textbox1").val();
+    $("#thankYouMessage").fadeIn(1000); 
+    setTimeout(function() {
+        $("#thankYouMessage").fadeOut(1000); 
+    }, 3000);
+}
+
+        function handleReset() {
+            $("form")[0].reset();
+        }
+
+
+
+
+</script>
+
+
+</head>
+
+
+<body>
+
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a class="active" href="#">Careers</a>
+        <a href="#">Contact</a>
+      
+    </div>
+
+
+<h1> Application Form </h1>
+<form action="" method="post" onsubmit="handleSubmit(); return false;">
+
+    <div id="thankYouMessage" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.8); color: white; padding: 20px; border-radius: 10px; z-index: 9999; text-align: center;">
+        Thank you, your application has been received!
+    </div>
+
+<h2> Personal information:</h2>
+
+<label for="textbox1"> First Name :</label>
+<input type="text" id="textbox1" name="First Name" maxlength="30" placeholder="Enter your first Name" required>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+ 
+
+<label for="textbox2"> Last Name :</label>
+<input type="text" id="textbox2" name="Last Name" maxlength="30" placeholder="Enter your last Name" required>
+<br> <br>
+<label for="textbox3"> Email :</label>
+<input type="email" id="textbox3" name="email" maxlength="200" placeholder="Enter your email" required>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  &nbsp; &nbsp; &nbsp; &nbsp;
+
+<label for="textbox4"> Phone Number :</label>
+<input type="tel" id="textbox4" name="Phone number" maxlength="30" placeholder="Enter your phone number" required>
+<br> <br>
+
+
+<label for="Gender">Gender: </label>
+<label for="male"> Male </label>
+<input type="radio" id="male" name="Gender" value="M" checked>
+
+<label for="female"> Female </label>
+<input type="radio" id="female" name="Gender" value="F">
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  &nbsp; &nbsp; &nbsp; &nbsp;
+
+
+<label for="birthdate"> Birth Date:</label>
+<input type="text" id="birthdate" name="BirthDate" placeholder="yy-mm-dd">
+
+<br> <br>
+
+<label for="textbox8"> Address :</label>
+<input type="text" id="textbox8" name="Address" maxlength="100" placeholder="Enter your Address" required>
+
+<h2>Education:</h2>
+
+<label for="textbox9"> University/College :</label>
+<input type="text" id="textbox9" name="University/College" maxlength="100" placeholder="Such as: Tanta university" required>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+ &nbsp; &nbsp; 
+  
+
+
+<label for="textbox10"> Degree Earned :</label>
+<input type="text" id="textbox10" name="Degree Earned" maxlength="100" placeholder="Such as: Excellent" required>
+<br><br>
+
+<label for="textbox11"> Date of Graduation :</label>
+<input type="text" id="textbox11" name="Year of graduation" placeholder="yy-mm-dd" required>
+
+<h2>Job experience:</h2>
+
+
+<label for="experience"> Do you have previous experience in this field?</label>
+
+<label for="Yes"> Yes </label>
+<input type="radio" id="Yes" name="experience" value="Y" checked >
+
+<label for="No"> No </label>
+<input type="radio" id="No" name="experience" value="N">
+
+<br> <br>
+<label for="Why apply">Why do you want to apply for this job?</label>
+<br> <br>
+
+<textarea name="Why apply" required> </textarea>
+<br> <br>
+
+<label for="Resume"> Upload Resume :</label>
+<input type="file" name="Resume" required>
+<br> <br>
+
+<input type="checkbox" id="box" name="check" value="val" checked>
+        <label for="box">I agree with all terms and conditions.</label>
+        <br><br>
+
+        <button type="submit">Submit</button>
+        <button type="button" onclick="handleReset()">Reset</button>
+ 
+        
+</form>
+</body>
+</html>
