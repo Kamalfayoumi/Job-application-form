@@ -1,0 +1,38 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "job_application_form";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $firstName = $_POST["First_Name"];
+    $lastName = $_POST["Last_Name"];
+    $email = $_POST["Email"];
+    $phoneNumber = $_POST ["Phone_Number"];
+    $gender = $_POST ["Gender"];
+    $birthdate = $_POST ["Birth_Date"];
+    $adress = $_POST ["Adress"];
+    $university = $_POST ["University"];
+    $degree = $_POST ["Degree"];
+    $dateOfGraduation = $_POST ["Date_Of_Graduation"];
+    $previousExperience = $_POST ["Previous_Experience"];
+    $WhyApply = $_POST ["Why_Apply"];
+}
+
+$sql = "INSERT INTO job_application_form (First_Name, Last_Name, Email,Phone_Number ,Gender , Birth_Date, Adress,University ,Degree ,Date_Of_Graduation ,Previous_Experience , Why_Apply ) 
+VALUES ('$firstName', '$lastName', '$email', '$phoneNumber', '$gender', '$birthdate', '$adress', '$university', '$degree', '$dateOfGraduation', '$previousExperience', $WhyApply)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+
+?>
